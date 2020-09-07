@@ -105,7 +105,7 @@ function getOrderValue(order) {
 function getSortFunction(sortType) {
   switch (sortType) {
   case 'string':
-    return (a, b) => a.localeCompare(b, 'default', {caseFirst: 'upper'});
+    return (a, b) => a.localeCompare(b, 'ru', {caseFirst: 'upper'});
   case 'number':
     return (a, b) => a - b;
   }
