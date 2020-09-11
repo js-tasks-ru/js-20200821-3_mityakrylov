@@ -124,10 +124,7 @@ export default class SortableTable {
   }
 
   handleHeaderClick(event) {
-    console.log('Inside handleHeaderClick', event.target);
     let headerCell = event.target.closest('div');
-    console.log('Inside handleHeaderClick, headerCell = ', headerCell);
-    console.log('Inside handleHeaderClick, headerCell.id = ', headerCell.dataset.id);
     const column = this.header.find(c => c.id === headerCell.dataset.id);
 
     if (column.sortable) {
