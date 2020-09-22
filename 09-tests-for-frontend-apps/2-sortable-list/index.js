@@ -20,13 +20,16 @@ export default class SortableList {
     this.element = document.createElement('ul');
     this.element.classList.add('sortable-list');
 
-    this.items.forEach(item => {
-      item.classList.add('sortable-list__item');
-      this.element.append(item);
-    });
+    this.items.forEach(item => this.push(item));
 
     this.placeholder = document.createElement('div');
     this.placeholder.classList.add('sortable-list__placeholder');
+  }
+
+  push(item) {
+    item.classList.add('sortable-list__item');
+    this.items.push(item);
+    this.element.append(item);
   }
 
   initEventListeners() {
